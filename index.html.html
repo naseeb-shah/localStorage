@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        .main{
+            margin-left: 5%;
+            width: 90%;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+         border: 10px red double;
+            background-color: beige;
+        }
+        .main>div{
+            font-size: 40px;
+            color: blueviolet;
+            margin: 10%;
+
+        }
+        .top{
+            color: white;
+            text-align: center;
+            text-shadow: 20%;
+            background-color: rgba(228, 66, 66, 0.738);
+            border: 10px rgb(132, 131, 131) double;
+        }
+    </style>
+</head>
+<body><div class="top">
+    <h1>Counter Using localStorage </h1>
+    <p>Made with Nas@San Shah</p>
+</div>
+    <div class="main">
+        
+    <div>  <button onclick="inc()"><h1>++</h1></button></div>
+        <div><h1 id="result"  value=0>0</h1></div>
+        <div><button onclick="dc()"><h1>--</h1></button></div>
+    </div>
+</body>
+<script>
+    if(localStorage.getItem('c')==null)
+{var c=0}
+else{
+    c=localStorage.getItem('c')
+    document.getElementById('result').innerText=c
+}
+function dc(){
+        c--
+        localStorage.setItem('c',c)
+        document.getElementById('result').style.color="red";
+document.getElementById('result').innerText=c
+
+
+    }
+    function inc(){
+        c++
+        localStorage.setItem('c',c)
+        document.getElementById('result').style.color="green";
+document.getElementById('result').innerText=c
+
+
+    }
+</script>
+</html>
